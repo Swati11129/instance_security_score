@@ -3,14 +3,15 @@
     <v-container class=" white my-5 cyan">
         <div class="text my-4 font-weight-bold text-h5 white  ">Instances Security Score</div>
         <div>
-            <div class="font-weight-bold d-flex white  " v-for="(title, i) in titles" :key="i">
+            <div class="font-weight-bold d-flex pink  " v-for="(title, i) in titles" :key="i">
                 <span style="width:35%" class="blue">
                     <div v-text="title.text"></div>
                 </span>
-                <span style="width: 25%;" class="red">
+                <div style="" class="white mx-auto d-flex">
+                    <img src="../assets/score icon.jpg" width="25" height="20" class="mr-2 my-auto">
                     <div v-text="title.score"> </div>
-                </span>
-                <span class="purple">
+                </div>
+                <span class="white mx-auto" style="width: 15%;">  
                     <div v-text="title.priority"></div>
                 </span>
             </div>
@@ -22,13 +23,13 @@
                     <div class="blue my-auto" style="width:35%">
                         <div v-text="item.text"></div>
                     </div>
-                    <div  class="d-flex red my-auto" style="width:25%">
-                        <div  style="width:25px; height:13px" :style="{'background-color':bg_color}" class="rounded-pill my-auto   "/>
+                    <div  class="d-flex mx-auto white my-auto" style="">
+                        <div  style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto   "/>
                         <div v-text="item.score"/>
                     </div>
-                    <div class="purple my-auto" style="width:20%">
+                    <div class="white my-auto mx-auto" style="width:15%">
                         <div>
-                            <v-progress-linear   class="rounded-pill " v-model="item.high_priority_issue" height="13"  />
+                            <v-progress-linear   class="rounded-pill yellow " v-model="item.high_priority_issue" height="13"  />
                         </div>
                         <div v-text="item.high_priority_issue"></div>
                     </div>
@@ -42,8 +43,7 @@
 <script>
 export default {
     data: () => ({
-        // isLoading: true,
-        bg_color:'yellow',
+        
         titles: [{
             text: 'Instance Name',
             score: 'Score',
@@ -77,6 +77,25 @@ export default {
         ],
 
     }),
+    methods:{
+        score_color(score){
+            if(score<=25){
+                return 'green'
+            }
+            else if(score>25 && score<=50)
+            {
+                return 'yellow'
+            }
+            else if(score>50 && score<=75)
+            {
+                return'orange'
+            }
+            else if(score>75 && score<=100)
+            {
+                return 'red'
+            }
+        }
+    }
 
    
 }
