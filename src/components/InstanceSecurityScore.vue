@@ -1,47 +1,40 @@
 <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
-    <v-container class=" white my-5">
-        <v-container class="text my-4 font-weight-bold text-h5 white  ">Instance Security Score</v-container>
+    <v-container class=" white my-5 cyan">
+        <div class="text my-4 font-weight-bold text-h5 white  ">Instances Security Score</div>
+        <div>
+            <div class="font-weight-bold d-flex white  " v-for="(title, i) in titles" :key="i">
+                <span style="width:35%" class="blue">
+                    <div v-text="title.text"></div>
+                </span>
+                <span style="width: 25%;" class="red">
+                    <div v-text="title.score"> </div>
+                </span>
+                <span class="purple">
+                    <div v-text="title.priority"></div>
+                </span>
+            </div>
+        </div>
 
-        <v-list>
-            <v-list-item-group color="primary">
-                <v-list-item class="font-weight-bold" v-for="(title, i) in titles" :key="i">
-                    <v-list-item-content>
-                        <v-list-item-title v-text="title.text"></v-list-item-title>
-                    </v-list-item-content>
-                    <v-list-item-content>
-                        <v-list-item-title v-text="title.score"> </v-list-item-title>
-
-                    </v-list-item-content>
-                    <v-list-item-content>
-
-                        <v-list-item-title v-text="title.priority"></v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list-item-group>
-        </v-list>
-
-        <v-list>
-            <v-list-item-group color="primary">
-                <v-list-item class="my-5" v-for="(item, i) in items" :key="i">
-                    
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.text"></v-list-item-title>
-                    </v-list-item-content>
-
-                    <v-list-item-content class="mx-5">
-                        <span style="width:2px; background-color:purple; height:3px"></span>
-                        <v-list-item-title v-text="item.score"></v-list-item-title>
-                    </v-list-item-content>
-
-                    <v-list-item-content>
-                        <v-progress-linear v-show="isLoading" class="rounded-pill" v-model="item.high_priority_issue" height="10" />
-                        <v-list-item-title v-text="item.high_priority_issue"></v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list-item-group>
-        </v-list>
-
+        <div>
+            <div color="primary">
+                <div class="my-5 d-flex indigo" v-for="(item, i) in items" :key="i">
+                    <div class="blue my-auto" style="width:35%">
+                        <div v-text="item.text"></div>
+                    </div>
+                    <div  class="d-flex red my-auto" style="width:25%">
+                        <div  style="width:25px; height:13px" :style="{'background-color':bg_color}" class="rounded-pill my-auto   "/>
+                        <div v-text="item.score"/>
+                    </div>
+                    <div class="purple my-auto" style="width:20%">
+                        <div>
+                            <v-progress-linear   class="rounded-pill " v-model="item.high_priority_issue" height="13"  />
+                        </div>
+                        <div v-text="item.high_priority_issue"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </v-container>
 </div>
 </template>
@@ -49,7 +42,8 @@
 <script>
 export default {
     data: () => ({
-        isLoading: true,
+        // isLoading: true,
+        bg_color:'yellow',
         titles: [{
             text: 'Instance Name',
             score: 'Score',
@@ -84,11 +78,7 @@ export default {
 
     }),
 
-    watch() {
-        data: {
-            this.isLoading = false
-        }
-    },
+   
 }
 </script>
 
