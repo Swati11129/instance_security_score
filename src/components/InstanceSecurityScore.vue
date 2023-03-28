@@ -82,13 +82,4 @@ export default {
 }
 </script>
 
-<style>
-.box {
-    background-color: aqua;
 
-}
-
-.text {
-    background: #d24b4b;
-}
-</style>
