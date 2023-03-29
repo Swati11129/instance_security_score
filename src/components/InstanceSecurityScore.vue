@@ -1,29 +1,32 @@
 <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
-    <v-container class=" white my-5 " style="width: 60%;">
-        <div class="text my-5 font-weight-bold text-h5 ">Instances Security Score</div>
-        <div class="font-weight-bold d-flex mt-10 ">
-            <span style="width:35%">Instance Name</span>
-            <div class=" mx-auto d-flex">
-                <img src="../assets/score icon.jpg" width="25" height="20" class="mr-2 my-auto">
+    <v-container  class=" white my-5 pa-10  " style="width: 60%;">
+        <div class="text  font-weight-bold text-h5 mb-8">Instances Security Score</div>
+        <div class="font-weight-bold d-flex justify-space-between  ">
+            <span style="width:20%" >Instance Name</span>
+            <div class="  d-flex" style="gap:5px">
+                <img src="../assets/score icon.jpg" width="25" height="20" class=" my-auto">
                 <div>Score </div>
             </div>
-            <span class=" mx-auto" style="width: 15%;"> High Priority Issue</span>
+            <span class="" style="width:250px">High Priority Issue</span>
         </div>
-        <v-container class="" start>
+        <v-container class="pa-0 " start>
             <v-col color="primary ">
-                <v-row class="my-8 pa-0 mx-0 d-flex justify-space-between " v-for="(item, i) in items" :key="i">
-                    <div class=" " style="width:35%">
-                        <div >{{item.text}}</div>
-                    </div>
-                    <div class="d-flex" >
-                        <div style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto mr-2  " />
+                <v-row class="my-8 d-flex justify-space-between " v-for="(item, i) in items" :key="i">
+                    <div class=" " style="width:20%"> {{item.text}} </div>
+                    <div class="d-flex" style="gap:10px">
+                        <div style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto  " />
                         <div v-text="item.score" />
                     </div>
-                    <div class="d-flex" style="width:15%">
-                        <v-progress-linear buffer-value="0" class="rounded-pill  mr-2 my-auto" v-model="item.high_priority_issue" height="13" style="width: 30%;"/>
-                        <div v-text="item.high_priority_issue" />
-                    </div>
+                    <div class="d-flex " style="width:250px; gap:10px ">
+                        
+                        <div class="d-flex" :style="{'width':item.high_priority_issue+'%' } "  >
+
+                            <v-progress-linear rounded="true" background-opacity="0.5" rounded-bar="true" buffer-value="0" color="#83A3FE" class="rounded-pill my-auto " value="100" height="13">
+                            </v-progress-linear>
+                        </div>
+                        <div>{{ item.high_priority_issue }}</div>
+                        </div>
                 </v-row>
             </v-col>
         </v-container>
@@ -34,12 +37,6 @@
 <script>
 export default {
     data: () => ({
-
-        titles: [{
-            text: 'Instance Name',
-            score: 'Score',
-            priority: 'High Priority Issue'
-        }, ],
         items: [{
                 text: 'Instance_Dev',
                 score: 91,
@@ -70,12 +67,10 @@ export default {
     }),
     methods: {
         score_color(score) {
-            if (score <= 25) {
+            if (score <= 33) {
                 return 'red'
-            } else if (score > 25 && score <= 50) {
+            } else if (score > 33 && score <= 75) {
                 return 'orange'
-            } else if (score > 50 && score <= 75) {
-                return 'yellow'
             } else if (score > 75 && score <= 100) {
                 return 'green'
             }
