@@ -78,19 +78,19 @@ export default {
     methods:{
         score_color(score){
             if(score<=25){
-                return 'green'
+                return '#6CB47F'
             }
             else if(score>25 && score<=50)
             {
-                return 'yellow'
+                return '#F6B952'
             }
             else if(score>50 && score<=75)
             {
-                return'orange'
+                return'#F69913'
             }
             else if(score>75 && score<=100)
             {
-                return 'red'
+                return '#FF482C'
             }
         }
     }
