@@ -1,20 +1,18 @@
 <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
     <v-container class=" white my-5 " style="width: 60%;">
-        <div class="text my-5 font-weight-bold text-h5   ">Instances Security Score</div>
-        <div>
-            <div class="font-weight-bold d-flex  my-8" v-for="(title, i) in titles" :key="i">
-                <span style="width:35%" class="">
-                    <div v-text="title.text"></div>
+        <div class="text my-5 font-weight-bold text-h5 ">Instances Security Score</div>
+            <div class="font-weight-bold d-flex  my-8" >
+                <span style="width:35%" >
+                    Instance Name
                 </span>
-                <div style="" class=" mx-auto d-flex">
+                <div class=" mx-auto d-flex">
                     <img src="../assets/score icon.jpg" width="25" height="20" class="mr-2 my-auto">
-                    <div v-text="title.score"> </div>
+                    <div>Score </div>
                 </div>
                 <span class=" mx-auto" style="width: 15%;">  
-                    <div v-text="title.priority"></div>
-                </span>
-            </div>
+                    High Priority Issue
+                </span>        
         </div>
 
         <div>
@@ -28,7 +26,7 @@
                         <div v-text="item.score"/>
                     </div>
                     <div class=" my-auto mx-auto d-flex justify-space-between" style="width:15%">
-                            <v-progress-linear   class="rounded-pill yellow mr-2 my-auto" v-model="item.high_priority_issue" height="13"  />                        
+                            <v-progress-linear buffer-value="0"   class="rounded-pill  mr-2 my-auto" v-model="item.high_priority_issue" height="13"  />                        
                         <div v-text="item.high_priority_issue" />
                     </div>
                 </div>
