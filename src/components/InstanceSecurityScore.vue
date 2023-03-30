@@ -1,26 +1,26 @@
 <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
-    <v-container class=" white my-5 pa-10  " style="width: 60%;">
-        <div class="text  font-weight-bold text-h5 mb-8">Instances Security Score</div>
+    <v-container class=" white mt-5 pa-10  " style="width: 60%;">
+        <div class="font-weight-bold text-h5 mb-8">Instances Security Score</div>
         <div class="font-weight-bold d-flex justify-space-between ">
-            <span style="width:150px">Instance Name</span>
-            <div class="  d-flex" style="gap:5px">
+            <div style="width:150px">Instance Name</div>
+            <div class="d-flex" style="gap:5px">
                 <img src="../assets/score icon.jpg" width="25" height="20" class="my-auto">
                 <div>Score </div>
             </div>
-            <span class="align-start" style="width:200px">High Priority Issue</span>
+            <div style="width:200px">High Priority Issue</div>
         </div>
         <div>
-            <v-col color="primary ">
+            <v-col >
                 <v-row class="my-8 d-flex justify-space-between " v-for="(item, i) in items" :key="i">
-                    <div class=" " style="width:150px"> {{item.text}} </div>
+                    <div style="width:150px"> {{item.text}} </div>
                     <div class="d-flex" style="gap:10px">
-                        <div style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto  " />
+                        <div style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto" />
                         <div v-text="item.score" />
                     </div>
                     <div class="d-flex " style="width:200px; gap:10px ">
                         <div class="d-flex" :style="{'width':item.high_priority_issue+'%' } ">
-                            <v-progress-linear rounded-bar="true" buffer-value="0" color="#83A3FE" class="rounded-pill my-auto " value="100" height="13" />
+                            <v-progress-linear color="#83A3FE" class="rounded-pill my-auto " value="100" height="13" />
                         </div>
                         <div>{{item.high_priority_issue}}</div>
                     </div>
