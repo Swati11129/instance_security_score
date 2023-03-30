@@ -105,3 +105,82 @@ tr{
   height: 60px !important;
 }
 </style>
+
+<!-- <template>
+<div style="background-color:#d1dde8; width:100vw; height:100vh">
+    <v-container class=" white mt-5 pa-10  " style="width: 50%;">
+        <div class="font-weight-bold text-h5 mb-8">Instances Security Score</div>
+        <div class="font-weight-bold d-flex justify-space-between ">
+            <div style="width:130px">Instance Name</div>
+            <div class="d-flex" style="gap:5px">
+                <img src="../assets/score icon.jpg" width="25" height="20" class="my-auto">
+                <div>Score </div>
+            </div>
+            <div style="width:200px">High Priority Issue</div>
+        </div>
+        <div>
+            <v-col >
+                <v-row class="my-8 d-flex justify-space-between " v-for="(item, i) in items" :key="i">
+                    <div style="width:130px"> {{item.text}} </div>
+                    <div class="d-flex" style="gap:10px">
+                        <div style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto" />
+                        <div v-text="item.score" />
+                    </div>
+                    <div class="d-flex " style="width:200px; gap:10px ">
+                        <div class="d-flex" :style="{'width':item.high_priority_issue+'%' } ">
+                            <v-progress-linear color="#83A3FE" class="rounded-pill my-auto " value="100" height="13" />
+                        </div>
+                        <div>{{item.high_priority_issue}}</div>
+                    </div>
+                </v-row>
+            </v-col>
+        </div>
+    </v-container>
+</div>
+</template> -->
+
+<!-- <script>
+export default {
+    data: () => ({
+        items: [{
+                text: 'Instance_Dev',
+                score: 91,
+                high_priority_issue: 100
+            },
+            {
+                text: 'Instance_Prod',
+                score: 76,
+                high_priority_issue: 80
+            },
+            {
+                text: 'Instance_Test',
+                score: 54,
+                high_priority_issue: 50
+            },
+            {
+                text: 'Instance_QA',
+                score: 43,
+                high_priority_issue: 30
+            },
+            {
+                text: 'Instance_Finance',
+                score: 23,
+                high_priority_issue: 20
+            },
+        ],
+
+    }),
+    methods: {
+        score_color(score) {
+            if (score <= 33) {
+                return 'green'
+            } else if (score > 33 && score <= 75) {
+                return 'orange'
+            } else if (score > 75 && score <= 100) {
+                return 'red'
+            }
+        }
+    }
+
+}
+</script> -->

@@ -1,9 +1,10 @@
-<template>
+
+<!-- <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
-    <v-container class=" white mt-5 pa-10  " style="width: 60%;">
+    <v-container class=" white mt-5 pa-10  " style="width: 50%;">
         <div class="font-weight-bold text-h5 mb-8">Instances Security Score</div>
         <div class="font-weight-bold d-flex justify-space-between ">
-            <div style="width:150px">Instance Name</div>
+            <div style="width:130px">Instance Name</div>
             <div class="d-flex" style="gap:5px">
                 <img src="../assets/score icon.jpg" width="25" height="20" class="my-auto">
                 <div>Score </div>
@@ -13,7 +14,7 @@
         <div>
             <v-col >
                 <v-row class="my-8 d-flex justify-space-between " v-for="(item, i) in items" :key="i">
-                    <div style="width:150px"> {{item.text}} </div>
+                    <div style="width:130px"> {{item.text}} </div>
                     <div class="d-flex" style="gap:10px">
                         <div style="width:25px; height:13px" :style="{'background-color':score_color(item.score)}" class="rounded-pill my-auto" />
                         <div v-text="item.score" />
@@ -29,9 +30,9 @@
         </div>
     </v-container>
 </div>
-</template>
+</template> -->
 
-<script>
+<!-- <script>
 export default {
     data: () => ({
         items: [{
@@ -75,4 +76,5 @@ export default {
     }
 
 }
-</script>
+</script> -->
+
