@@ -2,11 +2,11 @@
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
     <v-container class=" white mt-5 pa-10  " style="width: 50%;">
         <div class="font-weight-bold text-h5 mb-6 ml-4">Instances Security Score</div>
-        <v-simple-table style=" pointer-events: none; "  >
-
-            <thead  style="border: hidden !important; font-size:large" class="text-h5">
+        <v-simple-table style=" pointer-events: none; " >
+            <thead  style="border: hidden !important;" >
+                <!-- <tr style="font-weight: bold; font-size:25px;">Instances Security Score</tr> -->
                 <tr >
-                    <th class="">
+                    <th>
                         Instance Name
                     </th>
                     <th >
@@ -15,7 +15,7 @@
                             <div>Score </div>
                         </div>
                     </th>
-                    <th class="">
+                    <th >
                         High Priority Issue
                     </th>
                 </tr>
@@ -91,6 +91,7 @@ export default {
 
 }
 </script>
+
 <style>
 tbody td, th {
     border: hidden !important;
@@ -105,6 +106,8 @@ tr{
   height: 60px !important;
 }
 </style>
+
+
 
 <!-- <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
