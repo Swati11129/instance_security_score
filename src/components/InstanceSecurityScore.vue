@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
     <v-container class=" white mt-5 pa-10  " style="width: 50%;">
         <div class="font-weight-bold text-h5 mb-6 ml-4">Instances Security Score</div>
@@ -21,7 +21,7 @@
             </thead>
             
             <tbody >
-                <tr  v-for="item in items" :key="item.name">
+                <tr  v-for="(item ,i) in items" :key="i">
                     <td>{{ item.text }}</td>
                     <td>
                         <div class="d-flex" style="gap:10px">
@@ -102,11 +102,14 @@ tr th{
 }
 
 tr{
-  height: 60px !important;
+  height: 50px ;
 }
-</style>  -->
+</style>  
 
-<template>
+
+// code using  grid
+
+<!-- <template>
   <div style="background-color: #d1dde8; width: 100vw; height: 100vh">
     <v-container  class="white pa-10 " style="width: 45%">
       <div class="font-weight-bold text-h5 mb-8">Instances Security Score</div>
@@ -135,7 +138,7 @@ tr{
               :style="{ 'background-color': score_color(item.score) }"
               class="rounded-pill my-auto"
             />
-            <!-- <div v-text="item.score" /> -->
+             <div v-text="item.score" /> 
             <div>{{ item.score }}</div>
           </div>
         </v-col>
@@ -158,7 +161,7 @@ tr{
       </v-row>
     </v-container>
   </div>
-</template>
+</template> 
 
 <script>
 export default {
@@ -206,3 +209,4 @@ export default {
   },
 };
 </script>
+-->
