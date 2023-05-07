@@ -1,5 +1,5 @@
 
-<!-- <template>
+ <template>
 <div style="background-color:#d1dde8; width:100vw; height:100vh">
     <v-container class=" white mt-5 pa-10  " style="width: 50%;">
         <div class="font-weight-bold text-h5 mb-8">Instances Security Score</div>
@@ -30,9 +30,9 @@
         </div>
     </v-container>
 </div>
-</template> -->
+</template> 
 
-<!-- <script>
+ <script>
 export default {
     data: () => ({
         items: [{
@@ -76,5 +76,5 @@ export default {
     }
 
 }
-</script> -->
+</script> 
 
